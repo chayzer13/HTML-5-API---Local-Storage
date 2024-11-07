@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Local Storage</title>
+</head>
+<body>
+
+<h2>Локальное файловое хранилище</h2>
+
+<div class="drop-zone" id="dropZone">
+  Перетащите файлы сюда или <label for="fileInput" style="color: blue; cursor: pointer;">выберите файлы</label>
+  <input type="file" id="fileInput" multiple style="display: none;">
+</div>
+
+<div>
+  <label>Фильтр по размеру (KB): </label>
+  <input type="number" id="sizeFilter" placeholder="Введите максимальный размер">
+</div>
+
+<div>
+  <label>Фильтр по типу файла: </label>
+  <input type="text" id="typeFilter" placeholder="Введите MIME-тип, напр. 'image/png'">
+</div>
+
+<div>
+    <label for="fileTypeFilter">Фильтр по типу файла:</label>
+    <select id="fileTypeFilter">
+      <option value="">Все</option>
+      <option value="image/png">PNG</option>
+      <option value="image/jpeg">JPEG</option>
+      <option value="image/gif">GIF</option>
+      <option value="application/pdf">PDF</option>
+      <option value="text/plain">Текст</option>
+    </select>
+  </div>
+  
+
+<button onclick="filterFiles()">Применить фильтры</button>
+
+<div class="file-list" id="fileList"></div>
+<script src="script.js"></script>
+</body>
+</html>
